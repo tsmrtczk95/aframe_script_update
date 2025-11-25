@@ -42,50 +42,65 @@
         data-position="0.38986607818518104m 0.011359438037214786m 0.18293585139276303m" 
         data-normal="0.9741169993022115m -0.18244195431878774m -0.13345787715529148m" 
         data-visibility-attribute="visible"
-        onclick="playAudio('audio-headfact')">
-        <!--onclick="playHeadFact()"-->        
+        data-audio="audio_files/about_head.mp3"
+        onclick="playAudio(this)">
         <div class="HotspotAnnotation">Head</div></button>
+      
       <button class="Hotspot" 
         slot="hotspot-2" 
         data-position="0.34751829157029235m -0.17690007914782557m -0.14416603247349902m" 
         data-normal="0.814620645825804m -0.4439093309713777m -0.37327966629712633m" 
         data-visibility-attribute="visible"
-        onclick="playAudio('audio-bodyfact')">
-        <!--onclick="playBodyFact()"-->
+        data-audio="audio_files/about_body.mp3"
+        onclick="playAudio(this)">
         <div class="HotspotAnnotation">Body</div></button>
+      
       <button class="Hotspot" 
         slot="hotspot-3" 
         data-position="-0.012808543677866435m 0.18472340353697228m -0.2468127026616318m" 
         data-normal="0.29634791947072975m 0.9475100349937987m -0.12001101704185399m" 
         data-visibility-attribute="visible"
-        onclick="playAudio('audio-sagoworm')">
-        <!--onclick="playSagoWormAudio()"-->
+        data-audio="audio_files/about_sagoworms.mp3"
+        onclick="playAudio(this)">
         <div class="HotspotAnnotation">Sago Worm</div></button>
       <!-- HOTSPOTS END -->
       <!-- AUDIO SECTION -->
+      <audio id="hotspot-audio"></audio>
       <audio id="audio-headfact" src="audio_files/about_head.mp3"></audio>
       <audio id="audio-bodyfact" src="audio_files/about_body.mp3"></audio>
       <audio id="audio-sagoworm" src="audio_files/about_sagoworms.mp3"></audio>
-      <!--<script>
-        function playHeadFact(){
-          const audio = document.getElementById('audio-headfact');
-          audio.currentTime = 0;
-          audio.play(); } </script>
+      
       <script>
-        function playBodyFact(){
-          const audio = document.getElementById('audio-bodyfact');
-          audio.currentTime = 0;
-          audio.play(); } </script>
-      <script>
-        function playSagoWormAudio() {
-          const audio = document.getElementById('audio-sagoworm');
-          audio.currentTime = 0;     // restart if already played
-          audio.play(); } </script> -->
-      <script>
-        function playAudio(audioId) { // Get all audio elements
-          const audios = document.querySelectorAll("audio");
+        let currentButton = null;
+        let audioPlayer = null;
+
+        window.onload = () => {
+          audioPlayer = document.getElementById("hotspot-audio";
+        };
+        // Toggle play/pause
+        function playAudio(button) { // Get all audio elements
+          const audioSrc = button.getAttribute("data-audio");
+          // if same hotspot clicked again => toggle
+          if (currentButton === button) {
+            if (audioPlayer.paused) {
+              audioPlayer.play();
+            } else {
+              audioPlayer.pause();
+              }
+            return; }
+          // If switching to another hotspot → stop previous
+          if (currentButton !== null) {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+          }
+          // Load new audio
+          audioPlayer.src = audioSrc;
+          audioPlayer.play();
           
-          audios.forEach(audio => {
+          currentButton = button;
+          }
+      </script>
+      <!-- audios.forEach(audio => {
             if (audio.id !== audioId) {
               audio.pause();
               audio.currentTime = 0; } // reset others
@@ -93,9 +108,7 @@
           // Play the selected audio
           const selected = document.getElementById(audioId);
           selected.currentTime = 0;
-          selected.play(); 
-        }        
-      </script>
+          selected.play(); } -->
       <!-- AUDIO SECTION ENDS -->
       <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
