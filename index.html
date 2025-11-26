@@ -177,13 +177,18 @@
         setActiveTab( article === "article1" ? "tab1" :
                      article === "article2" ? "tab2" : "tab3");
         const textBox = document.getElementById("infoText"); textBox.textContent = "Loading...";
-        const links = { article1: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/patch-0.2/articles/01_sagoworm.txt",
-                       article2: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/patch-0.2/articles/02_nutrition.txt",
-                       article3: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/patch-0.2/articles/03_howsagowormeaten.txt" };
+        const links = { article1: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/master/articles/01_sagoworm.txt",
+                       article2: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/master/articles/02_nutrition.txt",
+                       article3: "https://raw.githubusercontent.com/tsmrtczk95/mukahxr_sagoworms/blob/master/articles/03_howsagowormeaten.txt"};
         fetch(links[article])
-          .then(response => response.text())
-          .then(data => textBox.textContent = data)
-          .catch(() => textBox.textContent = "Failed to load the article.");
+          .then(response => {
+            console.log("Fetch URL:", links[article]); console.log("Status:", response.status); response.text())
+          .then(data => { document.getElementById("infoText").textContent = data;})
+          /*.then(data => textBox.textContent = data)*/
+          .catch(error => { console.error("Fetch error:", error);
+                            document.getElementById("infoText").textContent = "Failed to load the article.\nCheck console for details.";
+                          });
+          /*.catch(() => textBox.textContent = "Failed to load the article.");*/
       }
     </script>
   </body>
