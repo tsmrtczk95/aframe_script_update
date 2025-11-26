@@ -12,38 +12,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"/>
     <style>
       /* Desktop layout (default) */
-      .ui-buttons {
-        position: absolute; top: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 10; }
-      .ui-buttons button {
-        display: flex; color: white; width: 180px; gap: 10px; border: none; border-radius: 12px; font-size: 15px; font-weight: 500;
+      .ui-buttons { position: absolute; top: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 10; }
+      .ui-buttons button { display: flex; color: white; width: 180px; gap: 10px; border: none; border-radius: 12px; font-size: 15px; font-weight: 500;
         backdrop-filter: blur(6px); align-items: center; justify-content: flex-start; padding: 10px 16px;
         background: rgba(0,0,0,0.65); transition: 0.2s ease; cursor: pointer;
         touch-action: manipulation; text-align: left; -webkit-tap-highlight-color: transparent; }
-      .ui-buttons button:hover {
-        background: rgba(0, 0, 0, 0.85); transform: translateY(-2px); }
-      .ui-buttons button:active {
-        transform: scale(0.95); }
-      .ui-buttons button .material-symbols-rounded {
-        font-size: 22px; margin-left: 2px;/*line-height: 0;*/}
-      #ar-button {
-        position: absolute !important;
-        bottom: 20px !important;
-        right: 20px !important;
-        z-index: 20 !important;
-        padding: 10px 16px; background: /*rgba(0, 0, 0, 0.85); color: #000;*/ border: none; border-radius: 10px; font-size: 16px; font-weight: 600; align-items: center; }
-      #ar-prompt {
-        z-index: 20 !important;}
-      .HotspotAnnotation {
-        background: rgba(0,0,0,0.7); padding: 6px 10px; border-radius: 6px; color: white; }
-      /* Mobile layout */
+      .ui-buttons button:hover { background: rgba(0, 0, 0, 0.85); transform: translateY(-2px); }
+      .ui-buttons button:active { transform: scale(0.95); }
+      .ui-buttons button .material-symbols-rounded { font-size: 22px; margin-left: 2px; }
+      #ar-button { position: absolute !important; bottom: 20px !important; right: 20px !important; z-index: 20 !important;
+        padding: 10px 16px; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; align-items: center; }
+      #ar-prompt { z-index: 20 !important; }
+      .HotspotAnnotation { background: rgba(0,0,0,0.7); padding: 6px 10px; border-radius: 6px; color: white; }
+      
+      /* MOBILE LAYOUT */
       @media (max-width: 768px){
         .ui-buttons { position: absolute; padding: 10px 16px; top: 20px; bottom: auto; left: 50%; transform: translateX(-50%); flex-direction: row; background: rgba(0,0,0,0.3); gap: 16px;
                     margin-top: 65px;}
         .ui-buttons button { padding: 0;/*10px 12px;*/ width: 52px; width: 52px; font-size: 12px; border-radius: 50%; justify-content: center;}
         .ui-buttons button .label { display: none; }
         .ui-buttons .material-symbols-rounded { font-size: 26px; }
-        #ar-button { bottom: 18px !important; top: auto !important; right: 18px !important; padding: 8px 12px; font-size: 12px; border-radius: 8px; background: rgba(255,255,255,0.95) }
-      }</style>
+        #ar-button { bottom: 18px !important; top: auto !important; right: 18px !important;
+                    padding: 8px 12px; font-size: 12px; border-radius: 8px; background: rgba(255,255,255,0.95) }
+      
+      /* INFO POPUP MODEL */
+      .info-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); display: none; justify-content: center;
+                   align-items: center; padding: 20px; z-index: 9999; }
+      .info-content { width: 90%; max-width: 520px; background: white; padding: 16px; border-radius: 14px; max-height: 80vh; overflow-y: auto; }
+      .info-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+      .info-header h2 { margin: 0; font-size: 20px; }
+      .close-info { background: none; border: none; font-size: 24px; cursor: pointer; }
+
+      /* TABS */
+      .info-tabs { display: flex; gap: 10px; margin-bottom: 12px; }
+      .info-tabs button { flex: 1; padding: 10px; border-radius: 8px; border: none; background: #e3e3e3; font-size: 14px; cursor: pointer; }
+      .info-tabs button.active { background: #007bff; color: white; }
+      .info-text { white-space: pre-wrap; font-size: 15px; line-height: 1.4; }
+      /* MOBILE TAB FIXES */
+      @media (max-width: 768px) {
+        .info-content { width: 95%; max-height: 85vh; }
+      }
+    </style>
     <div style="position:relative; width:100%; height:100vh; overflow: hidden;">
       <div class="ui-buttons">
         <button onclick="window.location.href='https://sites.google.com/poliku.edu.my/mukahxplore/3d-experiences?read_current=1'">
@@ -73,7 +82,6 @@
       camera-orbit="-240.3deg 76.52deg 2.32m" 
       field-of-view="30deg"
       style="width: 100%; height: 100%;">
-      <!-- style="background-color:#ffffff;"> -->
       <!-- HOTSPOTS -->
       <button class="Hotspot" 
         slot="hotspot-1" 
@@ -151,5 +159,37 @@
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <div id="infoModal" class="info-modal">
+      <div class="info-content">
+        <div class="info-header">
+          <h2>Information</h2>
+          <button class="close-info" onclick="closeInfo()">✕</button>
+        </div>
+        <div class="info-tabs">
+          <button onclick="loadArticle('article1')" id="tab1">Article 1</button>
+          <button onclick="loadArticle('article2')" id="tab2">Article 2</button>
+          <button onclick="loadArticle('article3')" id="tab3">Article 3</button>
+          </div>
+        <div id="infoText" class="info-text">Loading...</div>
+      </div>
+    </div>
+    <script> 
+      function openInfo() { document.getElementById("infoModal").style.display = "flex"; loadArticle("article1"); }
+      function closeInfo() { document.getElementById("infoModal").style.display = "none"; }
+      function setActiveTab(tabId) { document.querySelectorAll(".info-tabs button").forEach(btn => btn.classList.remove("active"));
+                                    document.getElementById(tabId).classList.add("active"); }
+      function loadArticle(article) {
+        setActiveTab( article === "article1" ? "tab1" :
+                     article === "article2" ? "tab2" : "tab3");
+        const textBox = document.getElementById("infoText"); textBox.textContent = "Loading...";
+        const links = { article1: "https://github.com/tsmrtczk95/mukahxr_sagoworms/blob/0118ceccb4359caeda7ca2ea18b0f97c09f29cea/articles/01_sagoworm.txt",
+                       article2: "https://github.com/tsmrtczk95/mukahxr_sagoworms/blob/0118ceccb4359caeda7ca2ea18b0f97c09f29cea/articles/02_nutrition.txt",
+                       article3: "https://github.com/tsmrtczk95/mukahxr_sagoworms/blob/0118ceccb4359caeda7ca2ea18b0f97c09f29cea/articles/03_howsagowormeaten.txt" };
+        fetch(links[article])
+          .then(response => response.text())
+          .then(data => textBox.textContent = data)
+          .catch(() => textBox.textContent = "Failed to load the article.");
+      }
+    </script>
   </body>
 </html>
