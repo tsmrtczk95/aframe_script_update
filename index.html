@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; template</title>
+    <title>Mukah Xplorer - Sago Worms</title>
     <meta charset="utf-8">
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <!--<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet"/>
     <style>
       /* Desktop layout (default) */
@@ -24,6 +23,18 @@
         padding: 10px 16px; border: none; border-radius: 10px; font-size: 16px; font-weight: 600; align-items: center; }
       #ar-prompt { z-index: 20 !important; }
       .HotspotAnnotation { background: rgba(0,0,0,0.7); padding: 6px 10px; border-radius: 6px; color: white; }
+      /* INFO POPUP MODEL */
+      .info-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); display: none; justify-content: center;
+                   align-items: center; padding: 20px; z-index: 9999; }
+      .info-content { width: 90%; max-width: 520px; background: white; padding: 16px; border-radius: 14px; max-height: 80vh; overflow-y: auto; }
+      .info-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+      .info-header h2 { margin: 0; font-size: 20px; }
+      .close-info { background: none; border: none; font-size: 24px; cursor: pointer; }
+      /* TABS */
+      .info-tabs { display: flex; gap: 10px; margin-bottom: 12px; }
+      .info-tabs button { flex: 1; padding: 10px; border-radius: 8px; border: none; background: #e3e3e3; font-size: 14px; cursor: pointer; }
+      .info-tabs button.active { background: #007bff; color: white; }
+      .info-text { white-space: pre-wrap; font-size: 15px; line-height: 1.4; }
       
       /* MOBILE LAYOUT */
       @media (max-width: 768px){
@@ -34,23 +45,7 @@
         .ui-buttons .material-symbols-rounded { font-size: 26px; }
         #ar-button { bottom: 18px !important; top: auto !important; right: 18px !important;
                     padding: 8px 12px; font-size: 12px; border-radius: 8px; background: rgba(255,255,255,0.95) }
-      
-      /* INFO POPUP MODEL */
-      .info-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); display: none; justify-content: center;
-                   align-items: center; padding: 20px; z-index: 9999; }
-      .info-content { width: 90%; max-width: 520px; background: white; padding: 16px; border-radius: 14px; max-height: 80vh; overflow-y: auto; }
-      .info-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-      .info-header h2 { margin: 0; font-size: 20px; }
-      .close-info { background: none; border: none; font-size: 24px; cursor: pointer; }
-
-      /* TABS */
-      .info-tabs { display: flex; gap: 10px; margin-bottom: 12px; }
-      .info-tabs button { flex: 1; padding: 10px; border-radius: 8px; border: none; background: #e3e3e3; font-size: 14px; cursor: pointer; }
-      .info-tabs button.active { background: #007bff; color: white; }
-      .info-text { white-space: pre-wrap; font-size: 15px; line-height: 1.4; }
-      /* MOBILE TAB FIXES */
-      @media (max-width: 768px) {
-        .info-content { width: 95%; max-height: 85vh; }
+        .info-content { width: 95%; max-height: 85vh; } /* MOBILE TAB FIXES */
       }
     </style>
     <div style="position:relative; width:100%; height:100vh; overflow: hidden;">
