@@ -1,3 +1,14 @@
+:root{
+  --accent:#0ea5a4;
+  --bg:#0b0b0b;
+  --panel-bg:#ffffff;
+  --text:#111827;
+}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;color:var(--text);}
+.viewer-host{position:relative; width:100%; height:100%;}
+/* simple reset for buttons */
+button{font:inherit}
+
 :not(:defined) > * {
   display: none;
 }
@@ -78,7 +89,6 @@ model-viewer {
   transform: translateY(calc(-50% + 4px));
   transition: transform 0.3s, opacity 0.3s;
 }
-
 
 .progress-bar {
   display: block;
@@ -166,4 +176,25 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
+}
+
+.ar-btn {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 999;
+}
+
+.ar-btn:active {
+  transform: translateX(-50%) scale(0.97);
 }
