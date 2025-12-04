@@ -37,7 +37,7 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     }
     else if(type==='articles') {
       // await loadArticleText(articleList);// toggle example: load text file; you can create a list UI instead
-      await loadArticleText('./assets/articles/articles.txt','Sago Worms: Delicacy of Melanau People');// toggle example: load text file; you can create a list UI instead
+      await loadArticleText('./assets/articles/articles.txt','Sago Worms - Delicacy of Melanau People');// toggle example: load text file; you can create a list UI instead
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz1.json');
