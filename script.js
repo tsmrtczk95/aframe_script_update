@@ -20,7 +20,8 @@ const audioList = [
   {label:'About Sago Worm', src:'./assets/audio/about_sagoworms.mp3'},
   {label:'Worm Body', src:'./assets/audio/about_body.mp3'},
   {label:'Head of Sago Worm', src:'./assets/audio/about_head.mp3'}];
-const videoList = [{label:'Hunting for Sago Worm', src:'./assets/video/sago_worm_hunting.mp4'}];
+const videoList = [{label:'Hunting for Sago Worm', src:'./assets/video/sago_worm_hunting.mp4'},
+                   {label:'Living Sago Worm', src:'./assets/video/living_sagow.mp4'}];
 /* const articleList = [
   {label:'The Sago Worm: From Pest to Prized Delicacy', src:'./assets/articles/01_sagoworm.txt'},
   {label:'Sago Worm Nutrition: A Powerhouse of Protein and Fat', src:'./assets/articles/02_nutrition.txt'},
