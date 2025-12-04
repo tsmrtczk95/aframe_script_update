@@ -41,8 +41,8 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     }
     else if(type==='home') {
       // navigate to homepage or close panel
-      closePanelExternal();
-      // window.location.href = '/';
+      // closePanelExternal();
+      window.location.href = 'https://sites.google.com/poliku.edu.my/mukahxplore/3d-experiences';
     }
   });
 });
