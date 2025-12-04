@@ -2,92 +2,32 @@
   "title": "Quiz",
   "questions": [
     {
-      "q": "What is a Jerunei?",
+      "q": "The Sago Worm is the larva of which insect species, which is often considered an agricultural pest?",
       "options": [
-        "Melanau Traditional Boat",
-        "Burial Pole For Melanau Nobles",
-        "A Traditional House",
-        "A Traditional Musical Instrument"
-      ],
-      "answer": 1
-    },
-    {
-      "q": "The jerunai is typically made of which type of wood?",
-      "options": [
-        "Pine Wood",
-        "Bamboo",
-        "IronWood (Kayu Belian)",
-        "Teak (Kayu Jati)"
+        "The Giant Water Bug",
+        "The Hornworm Moth",
+        "The Red Palm Weevil",
+        "The Atlas Beetle"
       ],
       "answer": 2
     },
     {
-      "q": "What's the purpose of the top chamber of the jerunai?",
+      "q": "Which of the following nutritional components is the sago worm particularly rich in, making it a valuable food source in sago-consuming cultures?",
       "options": [
-        "To place a slave chosen by the noble",
-        "To store food",
-        "To place flowers",
-        "To store ceremonial weapon"
-      ],
-      "answer": 0
-    },
-    {
-      "q": "What type of motive usually carved onto the Jerunei?",
-      "options": [
-        "Geometry Pattern",
-        "Cartoon Character",
-        "Vehicle and Boat",
-        "Plants and Animals"
-      ],
-      "answer": 3
-    },
-    {
-      "q": "Why was the Jerunei built high upward?",
-      "options": [
-        "Hold rain water",
-        "Shows the status quo and ranks of the noble",
-        "Act as a guard tower",
-        "To store paddy rice"
-      ],
-      "answer": 1
-    },
-    {
-      "q": "Where does the jerunai usually erected?",
-      "options": [
-        "In middle of thick jungle",
-        "By the riverbank or village compound",
-        "On the top of a mountain",
-        "Inside a house"
-      ],
-      "answer": 1
-    },
-    {
-      "q": "Who used jerunei in old days?",
-      "options": [
-        "Farmers only",
-        "Fishermen only",
-        "Children",
-        "Nobles, leaders and folks in high ranking position"
-      ],
-      "answer": 3
-    },
-    {
-      "q": "What's the symbolic meaning of the animal carvings on the jerunai?",
-      "options": [
-        "As decoration only",
-        "To entertain children",
-        "Sign of protection and status",
-        "As guide to catch fish"
+        "Protein and unsaturated fatty acids",
+        "Inorganic salts and complex polysaccharides",
+        "Water-soluble vitamins and refined carbohydrates",
+        "Simple sugars and dietary fiber"
       ],
       "answer": 2
     },
     {
-      "q": "Why jerunai practices ended?",
+      "q": "When sago worms are stir-fried, which textural result is commonly achieved due to the rendering of the internal fat?",
       "options": [
-        "Conversion into Religion and Modernity",
-        "Iron Wood supply depleted completely",
-        "Nobles migrate into city",
-        "Frequent flooding"
+        "A mushy, gelatinous consistency throughout",
+        "A hard, chitinous shell with a chewy center",
+        "A dry, chalky exterior and a firm, grainy interior",
+        "A crispy exterior and a tender, creamy interior"
       ],
       "answer": 0
     }
