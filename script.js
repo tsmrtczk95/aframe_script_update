@@ -16,13 +16,15 @@ document.querySelector('model-viewer').addEventListener('progress', onProgress);
 import { loadAudioList, loadVideoList, loadArticleText, loadPDF, loadExternalURL, loadQuiz, closePanelExternal } from './components/ui.js';
 
 // Example lists - update to match your assets
-const audioList = [{label:'Narration - English', src:'./assets/audio/audio1.mp3'}];
+const audioList = [
+  {label:'About Sago Worm', src:'./assets/audio/about_sagoworms.mp3'},
+  {label:'Worm Body', src:'./assets/audio/about_body.mp3'},
+  {label:'Head of Sago Worm', src:'./assets/audio/about_head.mp3'}];
 const videoList = [{label:'Demo Video', src:'./assets/video/video1.mp4'}];
 const articleList = [
-  {label:'🐛 The Sago Worm: From Pest to Prized Delicacy', src:'./assets/articles/01_sagoworm.txt'},
-  {label:'💪 Sago Worm Nutrition: A Powerhouse of Protein and Fat', src:'./assets/articles/02_nutrition.txt'},
-  {label:'🥢 A Taste of the Tropics: How Sago Worms are Eaten', src:'./assets/articles/03_howsagowormeaten.txt'}
-];
+  {label:'The Sago Worm: From Pest to Prized Delicacy', src:'./assets/articles/01_sagoworm.txt'},
+  {label:'Sago Worm Nutrition: A Powerhouse of Protein and Fat', src:'./assets/articles/02_nutrition.txt'},
+  {label:'A Taste of the Tropics: How Sago Worms are Eaten', src:'./assets/articles/03_howsagowormeaten.txt'}];
 
 document.querySelectorAll('[data-open]').forEach(btn=>{
   btn.addEventListener('click', async (ev)=>{
@@ -34,7 +36,8 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
       loadVideoList(videoList);
     }
     else if(type==='articles') {
-      await loadArticleText(articleList);// toggle example: load text file; you can create a list UI instead
+      // await loadArticleText(articleList);// toggle example: load text file; you can create a list UI instead
+      loadArticleText(articleList);// toggle example: load text file; you can create a list UI instead
     }
     else if(type==='quiz') {
       await loadQuiz('./assets/quiz/quiz1.json');
