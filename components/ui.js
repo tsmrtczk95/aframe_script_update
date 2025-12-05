@@ -34,7 +34,7 @@ export async function loadAudioList(list) {
   }
   openPanel('Audio', html.join(''));
 }
-
+/* *OLD VIDEO SCRIPT
 export function loadVideoList(list) {
   const html = [];
   html.push('<h3>Video</h3>');
@@ -50,7 +50,7 @@ export function loadVideoList(list) {
   }
   openPanel('Video', html.join(''));
 }
-
+*/
 export async function loadArticleText(path, title='Article') {
   try {
     const res = await fetch(path);
