@@ -77,35 +77,7 @@
         <audio id="audio-bodyfact" src="./assets/audio/about_body.mp3"></audio>
         <audio id="audio-sagoworm" src="./assets/audio/about_sagoworms.mp3"></audio>
         
-        <script>
-          let currentButton = null;
-          let audioPlayer = null;
-          
-          window.onload = () => {
-            audioPlayer = document.getElementById("hotspot-audio");
-          };
-          // Toggle play/pause
-          function playAudio(button) { // Get all audio elements
-            const audioSrc = button.getAttribute("data-audio");
-            // if same hotspot clicked again => toggle
-            if (currentButton === button) {
-              if (audioPlayer.paused) {
-                audioPlayer.play();
-              } else {
-                audioPlayer.pause();
-              }
-              return; }
-            // If switching to another hotspot → stop previous
-            if (currentButton !== null) {
-              audioPlayer.pause();
-              audioPlayer.currentTime = 0;
-            }
-            // Load new audio
-            audioPlayer.src = audioSrc;
-            audioPlayer.play();
-            
-            currentButton = button; }
-        </script>
+        <script type="module" src="./components/hotspot-music.js"></script>
 <!-- AUDIO SECTION ENDS. -->
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
