@@ -6,7 +6,6 @@
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./ar-overlay.css">
     <link rel="stylesheet" href="./components/viewer-ui.css">
   </head>
   <body>
@@ -43,7 +42,7 @@
         camera-orbit="-240.3deg 76.52deg 2.32m" 
         field-of-view="30deg"
         auto-rotate
-        style="width: 100%; height: 80vh;"
+        style="width: 100%; height: 90vh;"
         environment-image="./assets/images/sunrise_hdr_1k.hdr"
         skybox-image="./assets/images/sp_exterior.jpeg">
 <!-- HOTSPOTS -->
@@ -119,12 +118,12 @@
         </button>
       </model-viewer>
     </main>
-<!-- FULLSCREEN AR OVERLAY -->
+<!-- FULLSCREEN AR OVERLAY --><!--
     <div id="arOverlay" class="ar-overlay hidden">
       <div class="ar-instructions">Move your device to detect surfaces…</div>
       <img src="assets/images/reticle.png" class="ar-reticle" id="arReticle">
       <button id="exitAR" class="ar-exit-btn">✕</button>
-    </div>
+    </div>-->
 <!-- SLIDE UP CONTENT PANEL. -->
     <div id="contentPanel" class="content-panel" aria-hidden="true">
       <div id="contentHeader" class="content-header">
@@ -142,7 +141,6 @@
 <!-- SCRIPTS. -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script type="module" src="./components/ui.js"></script>
-    <script type="module" src="./ar-overlay.js"></script>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
