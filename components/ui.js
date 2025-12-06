@@ -34,7 +34,7 @@ export async function loadAudioList(list) {
   }
   openPanel('Audio', html.join(''));
 }
-/* *OLD VIDEO SCRIPT
+/* *OLD VIDEO SCRIPT - REPLACED BY UI-VIDEO.JS
 export function loadVideoList(list) {
   const html = [];
   html.push('<h3>Video</h3>');
@@ -51,6 +51,7 @@ export function loadVideoList(list) {
   openPanel('Video', html.join(''));
 }
 */
+/* *OLD ARTICLE SCRIPT - REPLACED BY UI-ARTICLE.JS
 export async function loadArticleText(path, title='Article') {
   try {
     const res = await fetch(path);
@@ -61,7 +62,7 @@ export async function loadArticleText(path, title='Article') {
     openPanel(title, `<p>Unable to load article: ${e.message}</p>`);
   }
 }
-
+*/
 export function loadPDF(path, title='Document (PDF)'){
   openPanel(title, `<iframe src="${path}" style="width:100%;height:70vh;border:0;"></iframe>`);
 }
