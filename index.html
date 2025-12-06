@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./components/viewer-ui.css">
   </head>
   <body>
-<!-- Top Navigation Bar --><!--
+<!-- Top Navigation Bar -->
     <header class="topbar">
       <div class="logo">Mukah XR Xplorer</div>
       <nav class="desktop-nav">
@@ -21,13 +21,6 @@
         <button data-open="quiz">Quiz</button>
       </nav>
       <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Menu">☰</button>
-    </header>-->
-    <header class="global-nav">
-      <button class="nav-btn" onclick="UI.goHome()">Home</button>
-      <button class="nav-btn" onclick="UI.openArticles()">Articles</button>
-      <button class="nav-btn" onclick="UI.openVideos()">Videos</button>
-      <button class="nav-btn" onclick="UI.openAudio()">Audio</button>
-      <button class="nav-btn" onclick="UI.openQuiz()">Quiz</button>
     </header>
 <!-- Slide-up Mobile Drawer -->
     <div id="mobile-drawer" class="mobile-drawer">
@@ -118,12 +111,12 @@
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
-<!-- AR BUTTON. --><!--
-        <button slot="ar-button" id="ar-button">-->
-        <button slot="ar-button" id="enterARButton" class="ar-launch">View in your space</button>
-        <div id="ar-prompt">
-          <img src="./assets/images/ar_hand_prompt.png">
-        </div>
+<!-- AR BUTTON. -->
+        <button slot="ar-button" id="ar-button">View in your space
+          <div id="ar-prompt">
+            <img src="./assets/images/ar_hand_prompt.png">
+          </div>
+        </button>
       </model-viewer>
     </main>
 <!-- FULLSCREEN AR OVERLAY -->
@@ -140,14 +133,12 @@
       </div>
       <div id="contentBody" class="content-body"></div>
     </div>
-<!-- VIDEO PANEL UPDATE. -->
+<!-- VIDEO PANEL UPDATE. --><!--
     <div id="contentPanel" class="content-panel">
       <button class="close-panel" onclick="UI.closePanel()">✕</button>
       <div id="contentContainer" class="content-container"></div>
       <button onclick="UI.openVideo('https://youtu.be/NiVm-GwH94o?si=GzHFW8nUoMVR8GvR')">YouTube 1</button>
-    </div>
-<!-- VIDEOS. -->
-    
+    </div>-->    
 <!-- SCRIPTS. -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <script type="module" src="./components/ui.js"></script>
