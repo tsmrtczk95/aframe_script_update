@@ -35,6 +35,7 @@ document.querySelectorAll('[data-open]').forEach(btn=>{
     }
     else if(type==='video') {
       loadVideoList(videoList);
+      UI.openVideo('https://youtu.be/NiVm-GwH94o?si=GzHFW8nUoMVR8GvR');
     }
     else if(type==='articles') {
       // await loadArticleText(articleList);// toggle example: load text file; you can create a list UI instead
