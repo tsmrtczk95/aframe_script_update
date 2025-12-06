@@ -75,7 +75,7 @@
   .mobile-menu-btn{display:block;}
 }
 
-/* NEW UPDATE */
+/* NEW UPDATE - ADDED FOR VIDEO SCRIPT */
 .content-panel {
   position: fixed;
   bottom: -100%;
@@ -121,4 +121,27 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+/*  NEW - ADDED FOR ARTICLE SCRIPT */
+/* PDF viewer */
+.pdf-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* External article */
+.external-article-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Plain text */
+.article-text {
+  white-space: pre-wrap;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 10px;
+  color: #eee;
 }
