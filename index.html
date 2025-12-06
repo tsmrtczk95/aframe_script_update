@@ -11,7 +11,7 @@
   <body>
 <!-- Top Navigation Bar -->
     <header class="topbar">
-      <div class="logo">Mukah XR Xplorer</div>
+      <div class="logo" img="src:./assets/images/logo.png">Mukah XR Xplorer</div>
       <nav class="desktop-nav">
         <button data-open="home">Home</button>
         <button data-open="audio">Audio</button>
@@ -111,11 +111,10 @@
           <div class="update-bar"></div>
         </div>
 <!-- AR BUTTON. -->
-        <button slot="ar-button" id="ar-button">View in your space
-          <div id="ar-prompt">
-            <img src="./assets/images/ar_hand_prompt.png">
-          </div>
-        </button>
+        <button slot="ar-button" id="ar-button" img="src:./assets/images/ar_hand_prompt.png">View in your space</button>
+        <div id="ar-prompt">
+          <img src="./assets/images/ar_hand_prompt.png">
+        </div>
       </model-viewer>
     </main>
 <!-- FULLSCREEN AR OVERLAY --><!--
