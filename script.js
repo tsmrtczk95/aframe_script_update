@@ -78,3 +78,7 @@ document.addEventListener('keydown',(e)=>{
     closePanelExternal();
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("WebXR UI Template Loaded");
+});
