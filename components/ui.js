@@ -34,7 +34,7 @@ export async function loadAudioList(list) {
   }
   openPanel('Audio', html.join(''));
 }
-/* *OLD VIDEO SCRIPT - REPLACED BY UI-VIDEO.JS
+/* OLD VIDEO SCRIPT - REPLACED BY UI-VIDEO.JS */
 export function loadVideoList(list) {
   const html = [];
   html.push('<h3>Video</h3>');
@@ -50,7 +50,7 @@ export function loadVideoList(list) {
   }
   openPanel('Video', html.join(''));
 }
-*/
+/*
 window.UI = {
 // ---- MAIN VIDEO LOADER ----
   openVideo(source) {
@@ -113,8 +113,8 @@ window.UI = {
   closePanel() {
     document.getElementById("contentPanel").classList.remove("visible");
   }
-};
-/* *OLD ARTICLE SCRIPT - REPLACED BY UI-ARTICLE.JS
+};*/
+/* OLD ARTICLE SCRIPT - REPLACED BY UI-ARTICLE.JS */
 export async function loadArticleText(path, title='Article') {
   try {
     const res = await fetch(path);
@@ -125,7 +125,7 @@ export async function loadArticleText(path, title='Article') {
     openPanel(title, `<p>Unable to load article: ${e.message}</p>`);
   }
 }
-*/
+/*
 window.UI.openArticle = async function (source) {
   UI._openPanel();
 
@@ -180,7 +180,7 @@ window.UI._escapeHTML = function (text) {
     '"': "&quot;",
     "'": "&#039;"
   }[m]));
-};
+};*/
 
 /* ===== THIS SPACE
 ======== IS PURPOSELY
