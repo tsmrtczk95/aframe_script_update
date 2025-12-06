@@ -6,11 +6,11 @@
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./components/viewer-ui.css"><!--
-    <link type="text/css" href="./styles.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="./ar-overlay.css">
+    <link rel="stylesheet" href="./components/viewer-ui.css">
   </head>
   <body>
-<!-- Top Navigation Bar -->
+<!-- Top Navigation Bar --><!--
     <header class="topbar">
       <div class="logo">Mukah XR Xplorer</div>
       <nav class="desktop-nav">
@@ -21,6 +21,13 @@
         <button data-open="quiz">Quiz</button>
       </nav>
       <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Menu">☰</button>
+    </header>-->
+    <header class="global-nav">
+      <button class="nav-btn" onclick="UI.goHome()">Home</button>
+      <button class="nav-btn" onclick="UI.openArticles()">Articles</button>
+      <button class="nav-btn" onclick="UI.openVideos()">Videos</button>
+      <button class="nav-btn" onclick="UI.openAudio()">Audio</button>
+      <button class="nav-btn" onclick="UI.openQuiz()">Quiz</button>
     </header>
 <!-- Slide-up Mobile Drawer -->
     <div id="mobile-drawer" class="mobile-drawer">
@@ -107,16 +114,24 @@
             
             currentButton = button; }
         </script>
-<!-- AUDIO SECTION ENDS -->
+<!-- AUDIO SECTION ENDS. -->
         <div class="progress-bar hide" slot="progress-bar">
           <div class="update-bar"></div>
         </div>
-        <button slot="ar-button" id="ar-button">View in your space</button>
+<!-- AR BUTTON. --><!--
+        <button slot="ar-button" id="ar-button">-->
+        <button slot="ar-button" id="enterARButton" class="ar-launch">View in your space</button>
         <div id="ar-prompt">
           <img src="./assets/images/ar_hand_prompt.png">
         </div>
       </model-viewer>
     </main>
+<!-- FULLSCREEN AR OVERLAY -->
+    <div id="arOverlay" class="ar-overlay hidden">
+      <div class="ar-instructions">Move your device to detect surfaces…</div>
+      <img src="assets/images/reticle.png" class="ar-reticle" id="arReticle">
+      <button id="exitAR" class="ar-exit-btn">✕</button>
+    </div>
 <!-- SLIDE UP CONTENT PANEL. -->
     <div id="contentPanel" class="content-panel" aria-hidden="true">
       <div id="contentHeader" class="content-header">
@@ -132,11 +147,9 @@
       <button onclick="UI.openVideo('https://youtu.be/NiVm-GwH94o?si=GzHFW8nUoMVR8GvR')">YouTube 1</button>
     </div>
     <!-- VIDEOS -->
-<!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-    <script type="module" src="./components/ui.js"></script><!--
-    <script type="module" src="./components/ui-video.js"></script>
-    <script type="module" src="./components/ui-articles.js"></script>-->
+    <script type="module" src="./components/ui.js"></script>
+    <script type="module" src="./ar-overlay.js"></script>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
